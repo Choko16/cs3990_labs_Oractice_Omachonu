@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Headers */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #34495e;
+    font-style: italic;
+}
+
+h3 {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-weight: normal;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 30px;
+    text-indent: 30px; /* red line */
+}
+
+section p:nth-child(2) {
+    text-indent: 0; /* remove red line for second paragraphs */
+}
+
+/* Profile Photo */
+.profile-photo {
+    float: left;
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border: 3px solid #3498db;
+}
+
+/* Lists */
+ul {
+    list-style-type: lower-alpha;
+    width: 100%;
+    text-align: justify;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+}
+
+a[href^="#"] {
+    font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+nav ul li a {
+    color: white;
+}
+
+/* Images */
+img {
+    border: 3px solid #3498db;
+    max-width: 100%;
+    height: auto;
+}
