@@ -138,3 +138,21 @@ footer p {
     font-size: 1rem;
     margin: 0;
 }
+
+/* Add a 3px border with different colors to all images */
+img {
+    border: 3px solid #42a5f5; /* Default border color */
+}
+
+/* Different colors for specific image classes */
+img.profile-photo {
+    border-color: #ff5722;
+}
+
+img.roadmap-image {
+    border-color: #4caf50;
+}
+
+img.icon {
+    border-color: #9c27b0;
+}
