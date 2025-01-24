@@ -116,6 +116,14 @@ header {
     margin-right: 8px; /* Adds space between the icon and text */
 }
 
+.roadmap-image {
+    width: 80px; /* Adjust width to fit your layout */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add spacing above the image */
+    display: block; /* Ensure the image stays on a new line */
+}
+
+
 /* Footer Styling */
 footer {
     background: linear-gradient(135deg, #2c3e50, #35495e);
