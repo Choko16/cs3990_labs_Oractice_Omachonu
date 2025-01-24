@@ -24,6 +24,25 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Add a 3px border with different colors to all images */
+img {
+    border: 3px solid #42a5f5; /* Default border color */
+}
+
+/* Different colors for specific image classes */
+img.profile-photo {
+    border-color: #ff5722;
+}
+
+img.roadmap-image {
+    border-color: #4caf50;
+}
+
+img.icon {
+    border-color: #9c27b0;
+}
+
+
 .main-header h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -139,20 +158,3 @@ footer p {
     margin: 0;
 }
 
-/* Add a 3px border with different colors to all images */
-img {
-    border: 3px solid #42a5f5; /* Default border color */
-}
-
-/* Different colors for specific image classes */
-img.profile-photo {
-    border-color: #ff5722;
-}
-
-img.roadmap-image {
-    border-color: #4caf50;
-}
-
-img.icon {
-    border-color: #9c27b0;
-}
