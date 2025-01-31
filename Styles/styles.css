@@ -124,7 +124,7 @@ aside img {
 
 /* Styling for Aside2 (Course List) */
 #aside2 {
-    background-color: #b39ddb; /* Light purple background for the entire list */
+    background-color: #b39ddb;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -138,7 +138,7 @@ aside img {
 }
 
 .course-list li {
-    background-color: #9575cd; /* Default darker purple background */
+    background-color: #9575cd;
     margin: 5px 0;
     padding: 10px;
     color: white;
@@ -146,7 +146,6 @@ aside img {
     align-items: center;
     font-size: 18px;
     border-radius: 5px;
-    position: relative;
 }
 
 /* Style the number in each list item */
@@ -154,13 +153,31 @@ aside img {
     content: counter(list-counter) ".";
     counter-increment: list-counter;
     font-weight: bold;
-    background-color: #7e57c2; /* Darkest purple background */
+    background-color: #7e57c2;
     color: white;
     padding: 10px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
     display: inline-block;
-    width: 40px;
-    text-align: center;
+    width: 200px;  /* Extend the width to cover the text */
+    text-align: left;  /* Align text to the left */
+    padding-left: 20px;  /* Add some padding for the number */
+}
+
+/* Style for the text */
+.course-list li span {
+    position: absolute;
+    left: 100px;  /* Increased from 80px to move text further to the right */
+    color: white;
+}
+
+.course-list li.highlight {
+    background-color: #673ab7;  /* Darker purple for highlight */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.course-list li.highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Special styling for one highlighted list item */
@@ -170,6 +187,8 @@ aside img {
 
 /* Adjusted Styling for Aside3 (To-Do List) */
 #aside3 {
+    position: relative;  /* For positioning context */
+    padding-bottom: 170px;  /* Add space for the sticky image */
     background-color: #b39ddb;
     padding: 15px;
     border-radius: 8px;
@@ -177,12 +196,13 @@ aside img {
 }
 
 .to-do {
+    position: relative;
+    z-index: 2;
+    background-color: #b39ddb;  /* Match the aside background */
     list-style: none;
     padding: 0;
     margin: 0;
-    
 }
-
 
 .to-do li {
     padding: 5px 10px;
@@ -230,10 +250,14 @@ aside img {
 
 .aside3-bottom-image {
     width: 100%;
-    max-width: 300px;  /* Increased from 200px */
-    height: 50px;
-    margin-top: 15px;
+    max-width: 300px;
+    height: 150px;
     border-radius: 8px;
+    position: fixed;  /* Keep it fixed */
+    bottom: 140px;  /* Adjust this value to position above the footer */
+    right: 20px;  /* Position from the right side */
+    object-fit: cover;
+    z-index: 200;  /* Set a high z-index to bring it to the front */
 }
 
 /* Footer */
