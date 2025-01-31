@@ -67,30 +67,37 @@ nav#menu ul li a:hover {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "left-aside main right-aside"
+        "education education education";
     gap: 15px;
     padding: 20px;
-    padding-bottom: 150px;  /* Add padding to account for footer height */
-    align-items: start;
+    padding-bottom: 150px;
+}
+
+.midsection {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* Creates space between the two sections */
+}
+
+.midsection section {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .asides-left {
+    grid-area: left-aside;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.midsection {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 15px;
-}
-
 .asides-right {
+    grid-area: right-aside;
     display: flex;
     flex-direction: column;
     gap: 15px;
