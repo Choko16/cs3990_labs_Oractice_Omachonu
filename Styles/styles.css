@@ -1,160 +1,312 @@
 /* General Reset */
-body, h1, h2, p, ul, li {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(to bottom, #eef2f3, #8e9eab);
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #35495e, #4a6572);
+    background-color: #9c27b0;
     color: white;
-    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 150px;
+    position: relative;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header h1 {
+    margin: 0;
     text-align: center;
-    border-bottom: 5px solid #2c3e50;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
 }
 
-/* Add a 3px border with different colors to all images */
-img {
-    border: 3px solid #42a5f5; /* Default border color */
-}
-
-/* Different colors for specific image classes */
-img.profile-photo {
-    border-color: #ff5722;
-}
-
-img.roadmap-image {
-    border-color: #4caf50;
-}
-
-img.icon {
-    border-color: #9c27b0;
-}
-
-
-.main-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-}
-
-.main-header p {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #dfe6e9;
-}
-
-/* Navigation Styling */
-.main-nav ul {
+/* Navigation Menu */
+nav#menu {
+    background-color: #7b1fa2;
+    padding: 15px;
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin: 20px 0 0 0;
-    padding: 0;
-    gap: 20px;
 }
 
-.main-nav a {
+nav#menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+}
+
+nav#menu ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
-    padding: 12px 20px;
-    background-color: #2d3e50;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 12px 24px;
+    background-color: #ba68c8;
+    border-radius: 12px;
+    display: block;
+    text-align: center;
 }
 
-.main-nav a:hover {
-    background-color: #42a5f5;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+nav#menu ul li a:hover {
+    background-color: #6a1b9a;
 }
 
-/* Section Styling */
-.section {
-    margin: 30px 0;
+/* Layout */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 150px;  /* Add padding to account for footer height */
+    align-items: start;
 }
 
-.section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.asides-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.section h2 {
-    font-size: 2rem;
-    color: #35495e;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #42a5f5;
-    display: inline-block;
-    padding-bottom: 8px;
+.midsection {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 15px;
 }
 
-.section p {
-    margin-top: 10px;
-    line-height: 1.8;
+.asides-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
-/* Profile Photo Styling */
-.profile-photo {
-    width: 150px;
-    height: 150px;
+aside {
+    background-color: #d1c4e9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+aside img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#aside3 img {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #42a5f5;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for Aside2 (Course List) */
+#aside2 {
+    background-color: #b39ddb; /* Light purple background for the entire list */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: list-counter;
+}
+
+.course-list li {
+    background-color: #9575cd; /* Default darker purple background */
+    margin: 5px 0;
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Style the number in each list item */
+.course-list li::before {
+    content: counter(list-counter) ".";
+    counter-increment: list-counter;
+    font-weight: bold;
+    background-color: #7e57c2; /* Darkest purple background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}
+
+/* Special styling for one highlighted list item */
+.course-list li.highlight {
+    background-color: #673ab7; /* Even darker shade of purple for the selected item */
+}
+
+/* Adjusted Styling for Aside3 (To-Do List) */
+#aside3 {
+    background-color: #b39ddb;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.to-do {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+.to-do li {
+    padding: 5px 10px;
+    margin: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Add space between icon and text */
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;  /* Slightly increased for better spacing */
+}
+
+.todo-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+
+/* Even and odd list items with different shades */
+.to-do li:nth-child(odd) {
+    background-color: #90caf9;
+}
+
+.to-do li:nth-child(even) {
+    background-color: #64b5f6;
+}
+
+/* Completed items */
+.to-do li.completed {
+    background-color: #bdbdbd;
+    text-decoration: line-through;
+    display: flex;
+    align-items: center;
+}
+
+.to-do li.completed::before {
+    content: none;  /* Remove the checkmark */
+}
+
+/* Planned items */
+.to-do li.planned::after {
+    content: none;  /* Remove the cross */
+}
+
+.aside3-bottom-image {
+    width: 100%;
+    max-width: 300px;  /* Increased from 200px */
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #4a148c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;  /* This spreads out the content */
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 100;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+    margin-left: 20px; /* Add some left margin for spacing */
+}
+
+.footer-button {
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    background-color: #6a1b9a;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Fixed width for buttons */
+    height: 40px; /* Fixed height for buttons */
+}
+
+.footer-button:hover {
+    background-color: #ba68c8;
+}
+
+/* Hover Effects for Footer Links */
+.footer-button:hover {
+    text-decoration: underline;
+}
+
+#aside3 > img {  /* Direct children only */
+    width: 300px;      /* Increased width */
+    height: 150px;     /* Different height for rectangular shape */
+    border-radius: 8px;  /* Changed from 50% to 8px for slight rounding instead of circle */
+    object-fit: cover;   /* This ensures the image fills the space properly */
+}
+
+/* Make sure this doesn't affect the todo icons */
+.todo-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;  /* Add some space from the right edge */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
-.profile-photo:hover {
-    transform: scale(1.1);
-}
-
-.icon {
-    width: 16px; /* Adjust the size */
-    height: 16px; /* Keep the aspect ratio */
-    vertical-align: middle; /* Aligns icon with the text */
-    margin-right: 8px; /* Adds space between the icon and text */
-}
-
-.roadmap-image {
-    width: 80px; /* Adjust width to fit your layout */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 10px; /* Add spacing above the image */
-    display: block; /* Ensure the image stays on a new line */
-}
-
-
-/* Footer Styling */
-footer {
-    background: linear-gradient(135deg, #2c3e50, #35495e);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
-}
-
-footer p {
-    font-size: 1rem;
-    margin: 0;
+.social-icon:hover {
+    transform: scale(1.1);  /* Slight zoom effect on hover */
 }
 
