@@ -3,117 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Name CV</title>
+    <meta name="description" content="Personal CV website showcasing navigation links to additional pages and sections">
+    <title>My CV - Page 1</title>
     <link rel="stylesheet" href="Styles/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Emmanuel Omachonu CV</h1>
-        <img src="Images/profile.jpg" alt="Student Photo" class="profile-photo">
+    <header class="main-header">
+        <div class="profile-container">
+            <img src="Images/profile.jpg" alt="Profile Photo" class="profile-photo">
+            <div class="name-tagline">
+                <h1>Emmanuel Omachonu</h1>
+                <p>Web Developer | Creative Thinker</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul class="breadcrumb">
+                <li><a href="page2.html">Career Roadmap</a></li>
+                <li><a href="page3.html">Hobbies</a></li>
+                <li><a href="#contact" class="bottom-link">Bottom</a></li>
+
+            </ul>
+        </nav>
     </header>
 
-    <nav id="menu">
+    <main>
+        <section id="personal-info" class="section">
+            <h2>About Me</h2>
+            <p>I am a driven and enthusiastic web developer with a keen eye for design and functionality. My journey in web development began with a passion for technology and creativity. Over the years, I have developed a deep understanding of user-centric design and how to craft seamless digital experiences. My expertise spans from developing responsive interfaces to optimizing back-end functionality</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ol>
+                <li class="spec_item">Front-End Expertise: I excel in creating visually appealing and highly responsive user interfaces. My knowledge of HTML5, CSS3, and JavaScript, paired with frameworks like React and Angular, ensures that I deliver pixel-perfect designs. I focus on accessibility and cross-browser compatibility to cater to a diverse user base.</li>
+                <br>
+                <li>Back-End Development: My proficiency in server-side programming languages such as Python (Django) and Node.js allows me to build scalable applications. Whether it’s managing databases, handling APIs, or optimizing performance, I understand the importance of a robust back-end infrastructure.</li>
+                <br>
+                <li class="spec_item">Problem-Solving and Debugging: Debugging code and solving complex problems are my forte. I enjoy breaking down intricate issues and finding elegant solutions. My attention to detail has often led to discovering and resolving bugs that could have compromised project timelines.</li>
+                <br>
+                <li>Collaborative Tools and Practices: With hands-on experience in tools like Git, JIRA, and Slack, I ensure smooth collaboration in remote and in-person teams. I am familiar with agile methodologies, allowing me to adapt to fast-paced development environments with ease.</li>
+            </ol>
+        </section>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <ol>
+                <li><strong>Bachelor’s Degree in Computer Science – University of Lagos</strong></li>
+                <p>Graduation Year: 2024</p>
+                <p>Key coursework included Data Structures, Object-Oriented Programming, and Web Development. I actively participated in coding competitions and was part of the tech club.</p>
+                <br>
+                <li><strong>Online Certifications:</strong></li>
+                <p>Full-Stack Web Development (Coursera), Responsive Web Design (freeCodeCamp), JavaScript Algorithms and Data Structures (Udemy).</p>
+                <br>
+                <li class="spec_item"><strong>Workshops and Hackathons:</strong></li>
+                <p>Participated in a 48-hour hackathon where my team developed a productivity tool that won the “Best User Experience” award.</p>
+            </ol>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <li><img src="Favicons/email.jpg" alt="Email Icon" class="icon"> <strong>Email:</strong> <a href="mailto:myemail@gmail.com">thisismyemail@gmail.com</a></li>
+                <li><img src="Favicons/phone.jpg" alt="Phone Icon" class="icon"> <strong>Phone:</strong> (123) 456-7890</li>
+                <li><img src="Favicons/address.png" alt="Address Icon" class="icon"> <strong>Address:</strong> 123 Web Developer Lane, Tech City</li>
+                <li><img src="Favicons/instagram.png" alt="Instagram Icon" class="icon"> <strong>Instagram:</strong> <a href="https://instagram.com/myprofile" target="_blank">@myprofile</a></li>
+                <li><img src="Favicons/linkedin.png" alt="LinkedIn Icon" class="icon"> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/myprofile" target="_blank">linkedin.com/in/myprofile</a></li>
+        </section>
+
+        
+    </main>
+
+    <nav class="additional-nav">
+        <img src="Images/links.jpg" alt="links" class="roadmap-image">
         <ul>
-            <li><a href="https://www.nwpolytech.ca/departments/science/" id="nwp-button">CS in NWP</a></li>
-            <li><a href="https://www.nwpolytech.ca/departments/science/faculty.html">Faculty & Staff</a></li>
-            <li><a href="https://github.com/Choko16/cs3990_labs_Oractice_Omachonu.git">NWP Home</a></li>
+            <li><a href="#" class="top-link">Top</a></li>
+            <li><a href="page2.html">Career Roadmap</a></li>
+            <li><a href="page3.html">Hobbies</a></li>
+            <li><a href="transformations.html">CSS Transformations</a></li>
         </ul>
     </nav>
 
-    <div class="wrapper">
-        <aside class="asides-left">
-            <aside id="aside1">
-                <img src="Images/NWP.jpg" alt="NWP Building">
-            </aside>
-            <aside id="aside2">
-                <h2>Courses Taken</h2>
-                <ol class="course-list">
-                    <li class="highlight"><span>Web Development</span></li>
-                    <li class="highlight"><span>Database Systems</span></li>
-                    <li class="highlight"><span>Cybersecurity</span></li>
-                    <li class="highlight"><span>Software Engineering</span></li>
-                    <li class="highlight"><span>Data Structures</span></li>
-                </ol>
-            </aside>
-            
-        </aside>
-
-        <main class="midsection">
-            <section>
-                <h2>Personal Skills and Qualities</h2>
-                <ul class="skills-list">
-                    <li>Strong analytical and problem-solving abilities with a proven track record in debugging complex systems</li>
-                    <li>Excellent team collaboration skills, having led multiple successful group projects</li>
-                    <li>Proficient in multiple programming languages including Python, Java, and JavaScript</li>
-                    <li>Advanced knowledge of database management systems and SQL</li>
-                    <li>Experience with Agile development methodologies and project management tools</li>
-                    <li>Strong communication skills with ability to explain technical concepts to non-technical stakeholders</li>
-                    <li>Adaptable and quick learner with a passion for emerging technologies</li>
-                    <li>Creative problem solver with attention to detail and quality assurance</li>
-                    <li>Experience with version control systems and collaborative development workflows</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <p>Northwestern Polytechnic University</p>
-                    <p>Expected Graduation: 2024</p>
-                    <p>Current GPA: 3.8/4.0</p>
-                    <p>Relevant Coursework:</p>
-                    <ul>
-                        <li>Advanced Data Structures and Algorithms</li>
-                        <li>Web Development and Design</li>
-                        <li>Database Management Systems</li>
-                        <li>Software Engineering Principles</li>
-                        <li>Computer Networks and Security</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-
-        <aside class="asides-right">
-            <aside id="aside3">
-                <h2>Additional Education</h2>
-                <ul class="to-do">
-                    <li class="planned"><img src="Images/toDo.png" alt="Done" class="todo-icon"> Python Basics</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="To Do" class="todo-icon"> Machine Learning</li>
-                    <li class="completed"><img src="Images/done.png" alt="Done" class="todo-icon"> Data Analysis</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="To Do" class="todo-icon"> Cloud Computing</li>
-                    <li class="completed"><img src="Images/done.png" alt="Done" class="todo-icon"> Web Development</li>
-                    <li class="completed"><img src="Images/done.png" alt="done" class="todo-icon"> Artificial Intelligence</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="Done" class="todo-icon"> Cybersecurity Fundamentals</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="To Do" class="todo-icon"> DevOps Essentials</li>
-                    <li class="completed"><img src="Images/done.png" alt="Done" class="todo-icon"> Mobile App Development</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="To Do" class="todo-icon"> Blockchain Technology</li>
-                    <li class="completed"><img src="Images/done.png" alt="Done" class="todo-icon"> UI/UX Design</li>
-                    <li class="planned"><img src="Images/toDo.png" alt="To Do" class="todo-icon"> Game Development</li>
-                </ul>
-                <img src="Images/campus.jpg" alt="campus" class="aside3-bottom-image">
-            </aside>
-            
-        </aside>
-    </div>
-
-    <footer>
-        <nav class="footer-links">
-            <a href="https://www.nwpolytech.ca/departments/science/" class="footer-button">CS in NWP</a>
-            <a href="https://www.nwpolytech.ca/departments/science/faculty.html" class="footer-button">Faculty & Staff</a>
-            <a href="https://www.nwpolytech.ca/" class="footer-button">NWP Home</a>
-            <a href="https://github.com/yourusername" class="footer-button">GitHub</a>
-        </nav>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/EmmyChoko">
-                <img src="Images/fb.ico" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/EmmyChoko">
-                <img src="Images/ig.png" alt="instagram" class="social-icon">
-            </a>
-            <a href="https://www.youtube.com/@omachonuemmanuel">
-                <img src="Images/yt.png" alt="Youtube" class="social-icon">
-            </a>
-        </div>
+    <footer class="main-footer">
+        <p> Please employ me...............</p>
     </footer>
 </body>
 </html>

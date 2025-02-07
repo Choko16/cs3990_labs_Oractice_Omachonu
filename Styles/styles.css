@@ -1,343 +1,343 @@
 /* General Reset */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to bottom, #eef2f3, #8e9eab);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
 /* Header Styling */
 header {
-    background-color: #9c27b0;
+    background: linear-gradient(135deg, #35495e, #4a6572);
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    height: 150px;
-    position: relative;
-}
-
-.profile-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-header h1 {
-    margin: 0;
+    padding: 40px 20px;
     text-align: center;
-    flex-grow: 1;
+    border-bottom: 5px solid #2c3e50;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation Menu */
-nav#menu {
-    background-color: #7b1fa2;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+/* Add a 3px border with different colors to all images */
+img {
+    border: 3px solid #42a5f5; /* Default border color */
 }
 
-nav#menu ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-    padding: 0;
+/* Different colors for specific image classes */
+img.profile-photo {
+    border-color: #ffffff;
 }
 
-nav#menu ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 12px 24px;
-    background-color: #ba68c8;
-    border-radius: 12px;
-    display: block;
-    text-align: center;
+img.roadmap-image {
+    border-color: #4caf50;
 }
 
-nav#menu ul li a:hover {
-    background-color: #6a1b9a;
+img.icon {
+    border-color: #9c27b0;
 }
 
-/* Layout */
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas: 
-        "left-aside main right-aside"
-        "education education education";
-    gap: 15px;
-    padding: 20px;
-    padding-bottom: 150px;
-}
 
-.midsection {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;  /* Creates space between the two sections */
-}
-
-.midsection section {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.asides-left {
-    grid-area: left-aside;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.asides-right {
-    grid-area: right-aside;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-aside {
-    background-color: #d1c4e9;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-aside img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-#aside3 img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-/* Styling for Aside2 (Course List) */
-#aside2 {
-    background-color: #b39ddb;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.course-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    counter-reset: list-counter;
-}
-
-.course-list li {
-    background-color: #9575cd;
-    margin: 5px 0;
-    padding: 10px;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-/* Style the number in each list item */
-.course-list li::before {
-    content: counter(list-counter) ".";
-    counter-increment: list-counter;
+.main-header h1 {
+    font-size: 3rem;
     font-weight: bold;
-    background-color: #7e57c2;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.main-header p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #dfe6e9;
+}
+
+/* Navigation Styling */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    gap: 20px;
+}
+
+/* Navigation Styling */
+.main-nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(circle at center, 
+        #ff8a00 0%,   /* Orange at the center */
+        #e52e71 30%,  /* Pink */
+        #5b2be8 60%,  /* Purple */
+        #2c3e50 100%  /* Dark Blue */
+    );
     color: white;
-    padding: 10px;
-    border-radius: 5px;
+    border: 2px solid transparent;
     display: inline-block;
-    width: 200px;  /* Extend the width to cover the text */
-    text-align: left;  /* Align text to the left */
-    padding-left: 20px;  /* Add some padding for the number */
-}
-
-/* Style for the text */
-.course-list li span {
-    position: absolute;
-    left: 100px;  /* Increased from 80px to move text further to the right */
-    color: white;
-}
-
-.course-list li.highlight {
-    background-color: #673ab7;  /* Darker purple for highlight */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.course-list li.highlight:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* Special styling for one highlighted list item */
-.course-list li.highlight {
-    background-color: #673ab7; /* Even darker shade of purple for the selected item */
-}
-
-/* Adjusted Styling for Aside3 (To-Do List) */
-#aside3 {
-    position: relative;  /* For positioning context */
-    padding-bottom: 170px;  /* Add space for the sticky image */
-    background-color: #b39ddb;
-    padding: 15px;
-    border-radius: 8px;
     text-align: center;
 }
 
-.to-do {
-    position: relative;
-    z-index: 2;
-    background-color: #b39ddb;  /* Match the aside background */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.to-do li {
-    padding: 5px 10px;
-    margin: 3px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;  /* Add space between icon and text */
-    border-radius: 5px;
-    font-size: 14px;
-    height: 30px;  /* Slightly increased for better spacing */
-}
-
-.todo-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    margin-right: 5px;
-}
-
-/* Even and odd list items with different shades */
-.to-do li:nth-child(odd) {
-    background-color: #90caf9;
-}
-
-.to-do li:nth-child(even) {
-    background-color: #64b5f6;
-}
-
-/* Completed items */
-.to-do li.completed {
-    background-color: #bdbdbd;
-    text-decoration: line-through;
-    display: flex;
-    align-items: center;
-}
-
-.to-do li.completed::before {
-    content: none;  /* Remove the checkmark */
-}
-
-/* Planned items */
-.to-do li.planned::after {
-    content: none;  /* Remove the cross */
-}
-
-.aside3-bottom-image {
-    width: 100%;
-    max-width: 300px;
-    height: 150px;
-    border-radius: 8px;
-    position: fixed;  /* Keep it fixed */
-    bottom: 140px;  /* Adjust this value to position above the footer */
-    right: 20px;  /* Position from the right side */
-    object-fit: cover;
-    z-index: 200;  /* Set a high z-index to bring it to the front */
-}
-
-/* Footer */
-footer {
-    background-color: #4a148c;
+.main-nav a:hover {
+    background: radial-gradient(circle at center, 
+        #42e695 0%,   /* Green */
+        #3bb2b8 30%,  /* Teal */
+        #e52e71 60%,  /* Pink */
+        #9c27b0 100%  /* Deep Purple */
+    );
     color: white;
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+/* Section Styling */
+.section {
+    margin: 30px 0;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;  /* This spreads out the content */
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
-    z-index: 100;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    grid-template-rows: repeat(2, 1fr); /* Two rows */
-    gap: 10px; /* Space between buttons */
-    justify-content: flex-start; /* Align buttons to the left */
-    margin-left: 20px; /* Add some left margin for spacing */
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.footer-button {
-    text-decoration: none;
-    color: white;
-    padding: 12px 24px;
-    background-color: #6a1b9a;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px; /* Fixed width for buttons */
-    height: 40px; /* Fixed height for buttons */
+.section h2 {
+    font-size: 2rem;
+    color: #35495e;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #42a5f5;
+    display: inline-block;
+    padding-bottom: 8px;
 }
 
-.footer-button:hover {
-    background-color: #ba68c8;
+.section p {
+    margin-top: 10px;
+    line-height: 1.8;
 }
 
-/* Hover Effects for Footer Links */
-.footer-button:hover {
-    text-decoration: underline;
-}
-
-#aside3 > img {  /* Direct children only */
-    width: 300px;      /* Increased width */
-    height: 150px;     /* Different height for rectangular shape */
-    border-radius: 8px;  /* Changed from 50% to 8px for slight rounding instead of circle */
-    object-fit: cover;   /* This ensures the image fills the space properly */
-}
-
-/* Make sure this doesn't affect the todo icons */
-.todo-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    margin-right: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-right: 20px;  /* Add some space from the right edge */
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
+/* Profile Photo Styling */
+.profile-photo {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #42a5f5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
-    transform: scale(1.1);  /* Slight zoom effect on hover */
+.profile-photo:hover {
+    border: 5px solid red;
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 16px; /* Adjust the size */
+    height: 16px; /* Keep the aspect ratio */
+    vertical-align: middle; /* Aligns icon with the text */
+    margin-right: 8px; /* Adds space between the icon and text */
+}
+
+.roadmap-image {
+    width: 80px; /* Adjust width to fit your layout */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add spacing above the image */
+    display: block; /* Ensure the image stays on a new line */
+}
+
+ol li:first-of-type {
+    color: red; /* Change this to any color you prefer */
+}
+
+#contact li:last-child {
+    color: blue; /* Change this to any color you prefer */
+}
+
+.page2 main p:last-child {
+    color: rgb(226, 15, 180); /* Change this to any color you prefer */
+}
+
+ol li:not(.spec_item) {
+    font-family: 'Brush Script MT', cursive;
+}
+
+.page3 main p:not(.spec_p):not(:last-of-type) {
+    font-size: 1.5rem; /* Change this to your desired font size */
+}
+
+/* Task 6: Insert an icon before even paragraphs on page 3 */
+.page3 main p:nth-of-type(even)::before {
+    content: "👉"; /* Unicode star emoji (you can replace this with an image or Font Awesome icon) */
+    margin-right: 10px; /* Add some space between the icon and the text */
+    font-size: 1.2rem; /* Adjust the size of the icon */
+}
+
+.bottom-link:hover::after {
+    content: "👇"; /* Unicode arrow icon */
+    margin-left: 5px; /* Add some space between the text and the icon */
+}
+
+/* Task 5: Add an icon after the «Top» link on hover */
+.top-link:hover::after {
+    content: "☝️"; /* Unicode arrow icon */
+    margin-left: 5px; /* Add some space between the text and the icon */
+}
+
+/* Task 7: Style the navigation chain (breadcrumb) */
+.breadcrumb {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between links */
+    font-size: 1.1rem;
+}
+
+.breadcrumb li {
+    display: inline-block;
+}
+
+.breadcrumb li:not(:first-child)::before {
+    content: "/"; /* Add a slash separator between links */
+    margin: 0 5px; /* Space around the separator */
+    color: #fcfcfc; /* Separator color */
+}
+
+.breadcrumb li:first-child::before {
+    content: "»"; /* Add a double angle quote before the first link */
+    margin-right: 5px; /* Space after the quote */
+    color: #f7f7f7; /* Quote color */
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #f3f6f8; /* Dark blue color for breadcrumb links */
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #42a5f5; /* Link hover color */
+}
+
+.section:nth-of-type(odd) h2 {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: none;
+}
+
+.section:nth-of-type(odd) h2::before,
+.section:nth-of-type(odd) h2::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #42a5f5;
+    border-bottom: none;
+}
+
+.section:nth-of-type(odd) h2::before {
+    margin-right: 10px;
+}
+
+.section:nth-of-type(odd) h2::after {
+    margin-left: 10px;
+}
+
+.section:nth-of-type(even) h2 {
+    background: linear-gradient(to right, #42a5f5, #7b1fa2); /* Smooth gradient effect */
+    color: white; /* Ensure text is visible */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Task 11: Move Image on Hover */
+#move-img {
+    width: 300px;  /* Adjust size */
+    height: auto;  /* Maintain aspect ratio */
+    transition: transform 0.5s ease;
+}
+
+#move-img:hover {
+    transform: translateX(50px);
+}
+
+/* Task 11: Scaling Small Images */
+.small-img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+
+.small-img:hover {
+    transform: scale(3.3);
+}
+
+/* Task 11: Diagonal Movement */
+#diagonal-img {
+    transition: transform 0.5s ease;
+}
+
+#diagonal-img:hover {
+    transform: translate(50px, 50px);
+}
+
+/* Task 11: Rotate Image on Text Hover */
+/* Ensure the container aligns items properly */
+.rotate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style for the rotating image */
+#rotate-img {
+    width: 150px;  /* Adjust size as needed */
+    height: auto;  /* Maintain aspect ratio */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for rotation */
+}
+
+/* Style for interactive text */
+#rotate-text {
+    cursor: pointer;  /* Show that the text is clickable */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Correct hover effect to rotate the image */
+#rotate-text:hover ~ #rotate-img {
+    transform: rotate(180deg); /* Rotate the image on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #2c3e50, #35495e);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
 }
 
