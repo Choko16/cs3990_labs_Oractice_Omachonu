@@ -1,461 +1,361 @@
-/* General Reset */
-body, h1, h2, p, ul, li {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(to bottom, #eef2f3, #8e9eab);
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-/* Header Styling */
-header {
-    background: linear-gradient(135deg, #35495e, #4a6572);
+    background-color: #dcc6e0;
+    color: #3d003d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+  }
+  
+  .header {
+    background: #3d003d;
     color: white;
-    padding: 40px 20px;
     text-align: center;
-    border-bottom: 5px solid #2c3e50;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Add a 3px border with different colors to all images */
-img {
-    border: 3px solid #42a5f5; /* Default border color */
-}
-
-/* Different colors for specific image classes */
-img.profile-photo {
-    border-color: #ffffff;
-}
-
-img.roadmap-image {
-    border-color: #4caf50;
-}
-
-img.icon {
-    border-color: #9c27b0;
-}
-
-
-.main-header h1 {
-    font-size: 3rem;
+    padding: 20px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-}
-
-.main-header p {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #dfe6e9;
-}
-
-/* Navigation Styling */
-.main-nav ul {
+    width: 100%;
+  }
+  
+  .tab-menu {
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin: 20px 0 0 0;
+    padding: 10px 0;
+    gap: 15px;
+  }
+  
+  .tab-menu ul {
+    list-style-type: none;
     padding: 0;
-    gap: 20px;
-}
-
-/* Navigation Styling */
-.main-nav a {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .tab-menu li {
+    background: #3d003d;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .tab-menu a {
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    background: radial-gradient(circle at center, 
-        #ff8a00 0%,   /* Orange at the center */
-        #e52e71 30%,  /* Pink */
-        #5b2be8 60%,  /* Purple */
-        #2c3e50 100%  /* Dark Blue */
-    );
     color: white;
-    border: 2px solid transparent;
-    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .tab-menu li:hover {
+    background: #1b001b;
+  }
+  
+  .main-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .sidebar-left {
+    width: 20%;
+    background: #7d4a92;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    width: 60%;
+    padding: 10px;
     text-align: center;
-}
-
-.main-nav a:hover {
-    background: radial-gradient(circle at center, 
-        #42e695 0%,   /* Green */
-        #3bb2b8 30%,  /* Teal */
-        #e52e71 60%,  /* Pink */
-        #9c27b0 100%  /* Deep Purple */
-    );
+    margin-top: 0;
+  }
+  
+  .sidebar-right {
+    width: 10%;
+    background: #7d4a92;
     color: white;
-    transform: scale(1.1);
-    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .map {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .jobs-section {
+    background: #7d4a92;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 30%;
+  }
+  
+  .job-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .job {
+  background: white;
+  color: #3d003d;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+  position: relative;
+  border: 2px solid #3d003d;
 }
 
-/* Section Styling */
-.section {
-    margin: 30px 0;
+.job h4 {
+    background: #3d003d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 14px;
+  }
+  
+  .job h4.popular {
+    background: darkred;
+  }
+  
+  .job p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .job .small-text {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+  }
+  
+  .job.cybersecurity:hover::after {
+    content: " $65.79/hr";
+    font-weight: bold;
+    color: #3d003d;
+  }
+  
+  .job.technician:hover::after {
+    content: " $30.25/hr";
+    font-weight: bold;
+    color: #3d003d;
+  }
+  
+  .job.analyst:hover::after {
+    content: " $42.50/hr";
+    font-weight: bold;
+    color: #3d003d;
+  }
+
+  /* Add these styles to your existing CSS */
+
+/* Dropdown menu styling */
+.dropdown {
+    position: relative; /* Ensures the dropdown is positioned relative to the parent */
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown content by default */
+    position: absolute; /* Position the dropdown below the button */
+    background-color: #3d003d; /* Match the background color of the tab menu */
+    min-width: 150px; /* Set a minimum width for the dropdown */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+    z-index: 1; /* Ensure the dropdown appears above other content */
+}
+
+.dropdown-content a {
+    color: white; /* Text color for dropdown items */
+    padding: 10px 15px; /* Add padding to dropdown items */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make each link a block element */
+    border-bottom: 1px solid rgb(228, 223, 223); /* Add a border between items */
+}
+
+.dropdown-content a:hover {
+    background-color: #1b001b; /* Change background color on hover */
+    color: white; /* Ensure text color remains white */
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+/* Hide all tab content by default */
+.tab-content {
+    display: none;
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.section h2 {
-    font-size: 2rem;
-    color: #35495e;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #42a5f5;
-    display: inline-block;
-    padding-bottom: 8px;
-}
-
-.section p {
-    margin-top: 10px;
-    line-height: 1.8;
-}
-
-/* Profile Photo Styling */
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #42a5f5;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    border: 5px solid red;
-    transform: scale(1.1);
-}
-
-.icon {
-    width: 16px; /* Adjust the size */
-    height: 16px; /* Keep the aspect ratio */
-    vertical-align: middle; /* Aligns icon with the text */
-    margin-right: 8px; /* Adds space between the icon and text */
-}
-
-.roadmap-image {
-    width: 80px; /* Adjust width to fit your layout */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 10px; /* Add spacing above the image */
-    display: block; /* Ensure the image stays on a new line */
-}
-
-ol li:first-of-type {
-    color: red; /* Change this to any color you prefer */
-}
-
-#contact li:last-child {
-    color: blue; /* Change this to any color you prefer */
-}
-
-.page2 main p:last-child {
-    color: rgb(226, 15, 180); /* Change this to any color you prefer */
-}
-
-ol li:not(.spec_item) {
-    font-family: 'Brush Script MT', cursive;
-}
-
-.page3 main p:not(.spec_p):not(:last-of-type) {
-    font-size: 1.5rem; /* Change this to your desired font size */
-}
-
-/* Task 6: Insert an icon before even paragraphs on page 3 */
-.page3 main p:nth-of-type(even)::before {
-    content: "👉"; /* Unicode star emoji (you can replace this with an image or Font Awesome icon) */
-    margin-right: 10px; /* Add some space between the icon and the text */
-    font-size: 1.2rem; /* Adjust the size of the icon */
-}
-
-.bottom-link:hover::after {
-    content: "👇"; /* Unicode arrow icon */
-    margin-left: 5px; /* Add some space between the text and the icon */
-}
-
-/* Task 5: Add an icon after the «Top» link on hover */
-.top-link:hover::after {
-    content: "☝️"; /* Unicode arrow icon */
-    margin-left: 5px; /* Add some space between the text and the icon */
-}
-
-/* Task 7: Style the navigation chain (breadcrumb) */
-.breadcrumb {
-    list-style: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Space between links */
-    font-size: 1.1rem;
-}
-
-.breadcrumb li {
-    display: inline-block;
-}
-
-.breadcrumb li:not(:first-child)::before {
-    content: "/"; /* Add a slash separator between links */
-    margin: 0 5px; /* Space around the separator */
-    color: #fcfcfc; /* Separator color */
-}
-
-.breadcrumb li:first-child::before {
-    content: "»"; /* Add a double angle quote before the first link */
-    margin-right: 5px; /* Space after the quote */
-    color: #f7f7f7; /* Quote color */
-}
-
-.breadcrumb a {
-    text-decoration: none;
-    color: #f3f6f8; /* Dark blue color for breadcrumb links */
-    transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-    color: #42a5f5; /* Link hover color */
-}
-
-.section:nth-of-type(odd) h2 {
-    text-align: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-bottom: none;
-}
-
-.section:nth-of-type(odd) h2::before,
-.section:nth-of-type(odd) h2::after {
-    content: "";
-    flex: 1;
-    height: 2px;
-    background-color: #42a5f5;
-    border-bottom: none;
-}
-
-.section:nth-of-type(odd) h2::before {
-    margin-right: 10px;
-}
-
-.section:nth-of-type(odd) h2::after {
-    margin-left: 10px;
-}
-
-.section:nth-of-type(even) h2 {
-    background: linear-gradient(to right, #42a5f5, #7b1fa2); /* Smooth gradient effect */
-    color: white; /* Ensure text is visible */
-    padding: 10px; /* Add padding for better appearance */
-    border-radius: 5px; /* Rounded corners */
-}
-
-/* Task 11: Move Image on Hover */
-#move-img {
-    width: 300px;  /* Adjust size */
-    height: auto;  /* Maintain aspect ratio */
-    transition: transform 0.5s ease;
-}
-
-#move-img:hover {
-    transform: translateX(50px);
-}
-
-/* Task 11: Scaling Small Images */
-.small-img {
-    width: 70px;
-    height: 70px;
-    transition: transform 0.3s ease;
-}
-
-.small-img:hover {
-    transform: scale(3.3);
-}
-
-/* Task 11: Diagonal Movement */
-#diagonal-img {
-    transition: transform 0.5s ease;
-}
-
-#diagonal-img:hover {
-    transform: translate(50px, 50px);
-}
-
-/* Task 11: Rotate Image on Text Hover */
-/* Ensure the container aligns items properly */
-.rotate-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Style for the rotating image */
-#rotate-img {
-    width: 150px;  /* Adjust size as needed */
-    height: auto;  /* Maintain aspect ratio */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for rotation */
-}
-
-/* Style for interactive text */
-#rotate-text {
-    cursor: pointer;  /* Show that the text is clickable */
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Correct hover effect to rotate the image */
-#rotate-text:hover ~ #rotate-img {
-    transform: rotate(180deg); /* Rotate the image on hover */
-}
-
-/* Apply a multi-color conical gradient to the "CSS Transformations" button */
-#gradient-link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    background: conic-gradient(
-        from 0deg,
-        #ff8a00 0%,  /* Orange */
-        #e52e71 15%, /* Pink */
-        #5b2be8 30%, /* Purple */
-        #2c3e50 45%, /* Dark Blue */
-        #42e695 60%, /* Green */
-        #3bb2b8 75%, /* Teal */
-        #ffeb3b 90%, /* Yellow */
-        #ff8a00 100%  /* Orange (looping back) */
-    );
-    color: white;
-    border: 2px solid transparent;
-    display: inline-block;
-    text-align: center;
-}
-
-/* Hover Effect */
-#gradient-link:hover {
-    background: conic-gradient(
-        from 180deg,
-        #ffeb3b 0%,  /* Yellow */
-        #42e695 15%, /* Green */
-        #3bb2b8 30%, /* Teal */
-        #e52e71 45%, /* Pink */
-        #5b2be8 60%, /* Purple */
-        #2c3e50 75%, /* Dark Blue */
-        #ff8a00 90%, /* Orange */
-        #ffeb3b 100%  /* Yellow (looping back) */
-    );
-    transform: scale(1.1);
-    border: 2px solid white;
-}
-
-/* General Styling for Hover Effects */
-.hover-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
     margin-top: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+  
+/* Show the targeted tab content */
+.tab-content:target {
+    display: block;
+}
+  
+/* Default image styling */
+.default-image {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+  
+/* Hide the default image when a tab is selected */
+.tab-content:target ~ .default-image {
+    display: none;
 }
 
-.block {
-    width: 200px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
+/* By default, the Home content is hidden */
+#home {
+    display: none;
+}
+
+/* When #home is targeted, hide the map image */
+#home:target ~ .default-image {
+    display: none;
+}
+
+/* When #home is targeted, show the Home content */
+#home:target {
+    display: block;
+}
+
+/* Provinces & Territories List Styling */
+.provinces-list {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.province {
+  display: flex; /* Ensures text and flag align properly */
+  align-items: center; /* Aligns text vertically with the image */
+  gap: 10px; /* Adds spacing between the flag and text */
+  padding-left: 5px; /* Adjusts spacing */
+  font-size: 18px; /* Increase font size for province names */
+  font-weight: bold; /* Optional: Make them bold */
+}
+
+.province::before {
+  content: "";
+  display: inline-block;
+  width: 40px; /* Adjust the width of the flag */
+  height: 30px; /* Adjust the height of the flag */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px; /* Adds spacing between flag and text */
+  flex-shrink: 0; /* Prevents shrinking when resizing */
+}
+
+/* Province-specific flags */
+.bc::before { background-image: url('../Images/bc.png'); }
+.ab::before { background-image: url('../Images/alberta.png'); }
+.mb::before { background-image: url('../Images/manitoba.png'); }
+.nb::before { background-image: url('../Images/new-brunswick.svg'); }
+.nfld::before { background-image: url('../Images/newfoundland-and-labrador.svg'); }
+.ns::before { background-image: url('../Images/nova-scotia.png'); }
+.on::before { background-image: url('../Images/ontario.svg'); }
+.pei::before { background-image: url('../Images/prince-edward-island.png'); }
+.qc::before { background-image: url('../Images/quebec.png'); }
+.sk::before { background-image: url('../Images/saskatchewan.png'); }
+.nt::before { background-image: url('../Images/northwest-territories.svg'); }
+.nu::before { background-image: url('../Images/nunavut.svg'); }
+.yt::before { background-image: url('../Images/yukon.svg'); }
+
+
+/* Show area on hover */
+.province:hover::after {
+  content: attr(data-area);
+  font-size: 16px;
+  color: gray;
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Province-specific areas */
+.bc:hover::after { content: " - 944,735 km²"; }
+.ab:hover::after { content: " - 661,848 km²"; }
+.mb:hover::after { content: " - 647,797 km²"; }
+.nb:hover::after { content: " - 72,908 km²"; }
+.nfld:hover::after { content: " - 405,212 km²"; }
+.ns:hover::after { content: " - 55,284 km²"; }
+.on:hover::after { content: " - 1,076,395 km²"; }
+.pei:hover::after { content: " - 5,660 km²"; }
+.qc:hover::after { content: " - 1,542,056 km²"; }
+.sk:hover::after { content: " - 651,036 km²"; }
+.nt:hover::after { content: " - 1,346,106 km²"; }
+.nu:hover::after { content: " - 2,093,190 km²"; }
+.yt:hover::after { content: " - 482,443 km²"; }
+  
+.footer {
+    text-align: left;
+    padding: 15px;
+    background: #7d4a92;
+    color: white;
     font-weight: bold;
-    transition: all 0.5s ease-in-out;
-}
-
-/* 1. border-top-left-radius, background-color */
-.radius-block {
-    background-color: #a0c4b0;
-    border-top-left-radius: 0px;
-}
-
-.radius-block:hover {
-    background-color: #f8e16c;
-    border-top-left-radius: 40px;
-}
-
-/* 2. border, background-color */
-.border-block {
-    background-color: #8c7777;
-    border: 2px solid transparent;
-}
-
-.border-block:hover {
-    background-color: #dab6a1;
-    border: 4px dashed #5a4a4a;
-}
-
-/* 3. box-shadow, width, height */
-.shadow-block {
-    background-color: #6d8196;
-    width: 200px;
-    height: 100px;
-    box-shadow: none;
-}
-
-.shadow-block:hover {
-    width: 180px;
-    height: 120px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* 4. Opacity effect with an image */
-.opacity-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px;
-    background: white;
-}
-
-.opacity-img {
     width: 100%;
-    height: 100%;
-    transition: opacity 0.5s ease-in-out;
 }
-
-.opacity-img:hover {
-    opacity: 0.3;
+.footer-left {
+  text-align: left;
+  padding: 15px;
+  background: #7d4a92;
+  color: white;
+  font-weight: bold;
+  width: 100%;
 }
-
-
-
-/* Footer Styling */
-footer {
-    background: linear-gradient(135deg, #2c3e50, #35495e);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+.footer-right {
+  text-align: center;
+  padding: 15px;
+  background: #7d4a92;
+  color: white;
+  font-weight: bold;
+  width: 100%;
 }
-
-footer p {
-    font-size: 1rem;
-    margin: 0;
+  
+@media screen and (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .sidebar-left, .sidebar-right, .content {
+      width: 100%;
+      margin-bottom: 20px;
+    }
 }
-
+  
+  
+  
