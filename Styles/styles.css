@@ -1,328 +1,221 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #dcc6e0;
-    color: #3d003d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .container {
-    display: flex;
-    width: 90%;
-    max-width: 1200px;
-    justify-content: space-between;
-  }
-  
-  .header {
-    background: #3d003d;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    width: 100%;
-  }
-  
-  .tab-menu {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    gap: 15px;
-  }
-  
-  .tab-menu ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .tab-menu li {
-    background: #3d003d;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  
-  .tab-menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .tab-menu li:hover {
-    background: #1b001b;
-  }
-  
-  .main-content {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .sidebar-left {
-    width: 20%;
-    background: #7d4a92;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-  }
-  
-  .content {
-    width: 60%;
-    padding: 10px;
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .sidebar-right {
-    width: 10%;
-    background: #7d4a92;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .map {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .jobs-section {
-    background: #7d4a92;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    width: 30%;
-  }
-  
-  .job-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
 
-  .job {
-  background: white;
-  color: #3d003d;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: left;
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 40, 120, 0.4), rgba(0, 40, 120, 0.4)),
+              url('../Images/hero-bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 2rem;
   position: relative;
-  border: 2px solid #3d003d;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.job h4 {
-    background: #3d003d;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 0;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    font-size: 14px;
-  }
-  
-  .job h4.popular {
-    background: darkred;
-  }
-  
-  .job p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .job .small-text {
-    font-size: 12px;
-    color: gray;
-    margin: 0;
-  }
-  
-  .job.cybersecurity:hover::after {
-    content: " $65.79/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-  
-  .job.technician:hover::after {
-    content: " $30.25/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-  
-  .job.analyst:hover::after {
-    content: " $42.50/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-
-  /* Add these styles to your existing CSS */
-
-/* Dropdown menu styling */
-.dropdown {
-    position: relative; /* Ensures the dropdown is positioned relative to the parent */
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
 }
 
-.dropdown-content {
-    display: none; /* Hide the dropdown content by default */
-    position: absolute; /* Position the dropdown below the button */
-    background-color: #3d003d; /* Match the background color of the tab menu */
-    min-width: 150px; /* Set a minimum width for the dropdown */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
-    z-index: 1; /* Ensure the dropdown appears above other content */
+/* Left and Right Sections */
+.hero-left {
+  text-align: left;
 }
 
-.dropdown-content a {
-    color: white; /* Text color for dropdown items */
-    padding: 10px 15px; /* Add padding to dropdown items */
-    text-decoration: none; /* Remove underline from links */
-    display: block; /* Make each link a block element */
-    border-bottom: 1px solid rgb(228, 223, 223); /* Add a border between items */
+.hero-right {
+  text-align: left;
 }
 
-.dropdown-content a:hover {
-    background-color: #1b001b; /* Change background color on hover */
-    color: white; /* Ensure text color remains white */
+/* Header text */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Show the dropdown content when hovering over the dropdown button */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-  
-/* Hide all tab content by default */
-.tab-content {
-    display: none;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-  
-/* Show the targeted tab content */
-.tab-content:target {
-    display: block;
-}
-  
-/* Default image styling */
-.default-image {
-    display: block;
-    width: 90%;
-    max-width: 600px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-  
-/* Hide the default image when a tab is selected */
-.tab-content:target ~ .default-image {
-    display: none;
-}
-
-/* By default, the Home content is hidden */
-#home {
-    display: none;
-}
-
-/* When #home is targeted, hide the map image */
-#home:target ~ .default-image {
-    display: none;
-}
-
-/* When #home is targeted, show the Home content */
-#home:target {
-    display: block;
-}
-
-/* Provinces & Territories List Styling */
-.provinces-list {
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-
-.province {
-  display: flex; /* Ensures text and flag align properly */
-  align-items: center; /* Aligns text vertically with the image */
-  gap: 10px; /* Adds spacing between the flag and text */
-  padding-left: 5px; /* Adjusts spacing */
-  font-size: 18px; /* Increase font size for province names */
-  font-weight: bold; /* Optional: Make them bold */
-}
-
-.province::before {
-  content: "";
+/* CTA Button */
+.cta-button {
   display: inline-block;
-  width: 40px; /* Adjust the width of the flag */
-  height: 30px; /* Adjust the height of the flag */
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 10px; /* Adds spacing between flag and text */
-  flex-shrink: 0; /* Prevents shrinking when resizing */
-}
-
-/* Province-specific flags */
-.bc::before { background-image: url('../Images/bc.png'); }
-.ab::before { background-image: url('../Images/alberta.png'); }
-.mb::before { background-image: url('../Images/manitoba.png'); }
-.nb::before { background-image: url('../Images/new-brunswick.svg'); }
-.nfld::before { background-image: url('../Images/newfoundland-and-labrador.svg'); }
-.ns::before { background-image: url('../Images/nova-scotia.png'); }
-.on::before { background-image: url('../Images/ontario.svg'); }
-.pei::before { background-image: url('../Images/prince-edward-island.png'); }
-.qc::before { background-image: url('../Images/quebec.png'); }
-.sk::before { background-image: url('../Images/saskatchewan.png'); }
-.nt::before { background-image: url('../Images/northwest-territories.svg'); }
-.nu::before { background-image: url('../Images/nunavut.svg'); }
-.yt::before { background-image: url('../Images/yukon.svg'); }
-
-
-/* Show area on hover */
-.province:hover::after {
-  content: attr(data-area);
-  font-size: 16px;
-  color: gray;
-  margin-left: 10px;
-  font-style: italic;
+  padding: 0.8rem 1.5rem;
+  background: #ffd700;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
   font-weight: bold;
 }
 
-/* Province-specific areas */
-.bc:hover::after { content: " - 944,735 km²"; }
-.ab:hover::after { content: " - 661,848 km²"; }
-.mb:hover::after { content: " - 647,797 km²"; }
-.nb:hover::after { content: " - 72,908 km²"; }
-.nfld:hover::after { content: " - 405,212 km²"; }
-.ns:hover::after { content: " - 55,284 km²"; }
-.on:hover::after { content: " - 1,076,395 km²"; }
-.pei:hover::after { content: " - 5,660 km²"; }
-.qc:hover::after { content: " - 1,542,056 km²"; }
-.sk:hover::after { content: " - 651,036 km²"; }
-.nt:hover::after { content: " - 1,346,106 km²"; }
-.nu:hover::after { content: " - 2,093,190 km²"; }
-.yt:hover::after { content: " - 482,443 km²"; }
-  
+.cta-button:hover {
+  background: #716b49;
+  opacity: 0.4;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Programs Grid */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+}
+
+/* Individual Program Card */
+.program-card {
+  background: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Section */
+.program-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  background-color: #001845;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+/* Title Overlay on Image */
+.program-image h2 {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Program Content */
+.program-content {
+  padding: 1.5rem;
+}
+
+.program-content p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* Learn More Button */
+.learn-more {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ffd700;
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more:hover {
+  background: #e6b8005b;
+  transform: translateY(-2px);
+}
+
+/* Course Gallery Section */
+.course-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+/* Course Item */
+.course-item {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  padding: 1rem;
+}
+
+/* Course Image */
+.course-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Course Title */
+.course-item h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Hidden Info (Initially Invisible) */
+.course-info {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.course-item:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.course-item:hover .course-image img {
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+.course-item:hover .course-info {
+  opacity: 1; /* Reveal credits & hours */
+}
+
 .footer {
-  background: #7d4a92;
+  background: #001845;
   color: white;
   padding: 15px 20px;
   width: 100%;
@@ -344,18 +237,3 @@ body {
 .footer-right {
   text-align: right;
 }
-
-  
-@media screen and (max-width: 768px) {
-    .main-content {
-      flex-direction: column;
-      align-items: center;
-    }
-    .sidebar-left, .sidebar-right, .content {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-}
-  
-  
-  
