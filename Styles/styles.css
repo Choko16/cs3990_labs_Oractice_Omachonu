@@ -322,29 +322,29 @@ body {
 .yt:hover::after { content: " - 482,443 km²"; }
   
 .footer {
-    text-align: left;
-    padding: 15px;
-    background: #7d4a92;
-    color: white;
-    font-weight: bold;
-    width: 100%;
+  background: #7d4a92;
+  color: white;
+  padding: 15px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Pushes left and right items apart */
+  align-items: center;
 }
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Ensures left text is on the left, right text on the right */
+}
+
 .footer-left {
   text-align: left;
-  padding: 15px;
-  background: #7d4a92;
-  color: white;
-  font-weight: bold;
-  width: 100%;
 }
+
 .footer-right {
-  text-align: center;
-  padding: 15px;
-  background: #7d4a92;
-  color: white;
-  font-weight: bold;
-  width: 100%;
+  text-align: right;
 }
+
   
 @media screen and (max-width: 768px) {
     .main-content {
