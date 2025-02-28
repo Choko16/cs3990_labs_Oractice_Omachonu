@@ -21,31 +21,35 @@ body {
   padding: 4rem 2rem;
   position: relative;
   min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Hero content */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust layout dynamically */
   align-items: center;
+  gap: 1rem; /* Spacing between sections */
 }
 
-/* Left and Right Sections */
+/* Hero Content */
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto adjusts */
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Hero Left & Right */
+.hero-left, .hero-right {
+  text-align: center; /* Centers content */
+  padding: 10px;
+}
+
+/* Ensures hero-left appears above hero-right when space is limited */
 .hero-left {
-  text-align: left;
+  order: -1; /* Moves to the top naturally on smaller screens */
 }
 
 .hero-right {
   text-align: left;
 }
+
 
 /* Header text */
 .hero h1 {
@@ -237,3 +241,4 @@ body {
 .footer-right {
   text-align: right;
 }
+
