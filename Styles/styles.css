@@ -218,6 +218,21 @@ body {
   opacity: 1; /* Reveal credits & hours */
 }
 
+/* Ensure the body takes up the full height of the viewport */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content should push the footer to the bottom */
+main {
+  flex: 1;
+}
+
+/* Fix the footer at the bottom of the viewport */
 .footer {
   background: #001845;
   color: white;
@@ -226,7 +241,11 @@ body {
   display: flex;
   justify-content: space-between; /* Pushes left and right items apart */
   align-items: center;
+  position: fixed; /* Makes the footer always visible */
+  bottom: 0;
+  left: 0;
 }
+
 
 .footer-content {
   width: 100%;
