@@ -11,7 +11,7 @@
     grid-template-areas: 
         "main right"
         "footer ."; /* Footer only spans the main section */
-    height: 100vh; /* Full viewport height */
+    height: 80vh; /* Full viewport height */
     width: 100%; /* Full width of the viewport */
 }
 
@@ -19,46 +19,51 @@
     grid-area: main;
     background: url('images/background.jpg') center/contain no-repeat;
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    height: 100%; /* Ensure the main section takes full height */
-    overflow: hidden; /* Prevent image overflow */
+    align-items: center;
+    justify-content: center;
 }
 
 .main img {
-    max-width: 50%; /* Allow the image to take up to 100% of the container width */
-    max-height: 50%; /* Allow the image to take up to 100% of the container height */
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 150%;
+    height: 150px;
     display: block;
-    transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
-    object-fit: contain; /* Ensure the image fits within the container */
 }
 
 .right {
     grid-area: right;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center; /* Center the image-box horizontally */
+    justify-content: flex-start; /* Align the image-box to the top */
     background: #aa4b4b; /* Background color for the right menu */
     padding: 10px;
-    align-items: flex-start; /* Align items to the left */
-    height: 115.5%; /* Ensure the right menu extends all the way down */
-    min-height: calc(100vh - 120px); /* Stretch to cover the space below the footer */
+    height: 113%; /* Ensure the right menu extends all the way down */
+}
+
+.image-box {
+    background: #f80101;
+    padding: 10px;
+    border-radius: 10px;
+    width: 160%;
+    max-width: 440px;
+    min-height: 900px;  /* Increased from 750px */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .image-container {
-    background: #f80101; /* Different background color for the rectangular section */
-    padding: 10px; /* Padding inside the container */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    width: 100%; /* Ensure the container spans the width of the right menu */
+    background: #f0f0f0; /* Background color for each image container */
+    padding: 10px; /* Padding inside each image container */
+    border-radius: 5px; /* Rounded corners for each image container */
     display: flex;
     align-items: center; /* Center the image vertically */
+    justify-content: flex-start; /* Align the image to the left */
 }
 
 .right img {
-    width: 150px; /* Fixed width for the cat images */
-    height: 150px; /* Fixed height for the cat images */
+    width: 170px; /* Fixed width for the cat images */
+    height: 170px; /* Fixed height for the cat images */
     cursor: pointer;
     border: 2px solid transparent;
     transition: 0.3s;
@@ -84,4 +89,9 @@
     height: 100px; /* Fixed height for the cat images */
     cursor: pointer;
     object-fit: cover; /* Ensures the image covers the area */
+}
+
+#largeImage {
+    opacity: 0;  /* Makes the image fully transparent initially */
+    display: none;  /* Completely hides the image */
 }

@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 largeImage.src = largeImageUrl;
                 largeImage.alt = imageTitle;
                 largeImage.style.opacity = 1;
+                largeImage.style.display = 'block';  // Make the image visible
             }, 300);
         });
     });
