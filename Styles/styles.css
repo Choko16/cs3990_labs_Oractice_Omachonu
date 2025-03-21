@@ -1,371 +1,64 @@
+/* Simple & Nice Looking CSS Style */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #dcc6e0;
-    color: #3d003d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .container {
-    display: flex;
-    width: 90%;
-    max-width: 1200px;
-    justify-content: space-between;
-  }
-  
-  .header {
-    background: #3d003d;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    width: 100%;
-  }
-  
-  .tab-menu {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    gap: 15px;
-  }
-  
-  .tab-menu ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .tab-menu li {
-    background: #3d003d;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  
-  .tab-menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .tab-menu li:hover {
-    background: #1b001b;
-  }
-  
-  .main-content {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .sidebar-left {
-    width: 20%;
-    background: #7d4a92;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-  }
-  
-  .content {
-    width: 60%;
-    padding: 10px;
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .sidebar-right {
-    width: 10%;
-    background: #7d4a92;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .map {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .jobs-section {
-    background: #7d4a92;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    width: 30%;
-  }
-  
-  .job-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .job {
-  background: white;
-  color: #3d003d;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: left;
-  position: relative;
-  border: 2px solid #3d003d;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f2f2f2, #e6e6e6);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
 }
 
-.job h4 {
-    background: #3d003d;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 0;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    font-size: 14px;
-  }
-  
-  .job h4.popular {
-    background: darkred;
-  }
-  
-  .job p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .job .small-text {
-    font-size: 12px;
-    color: gray;
-    margin: 0;
-  }
-  
-  .job.cybersecurity:hover::after {
-    content: " $65.79/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-  
-  .job.technician:hover::after {
-    content: " $30.25/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-  
-  .job.analyst:hover::after {
-    content: " $42.50/hr";
-    font-weight: bold;
-    color: #3d003d;
-  }
-
-  /* Add these styles to your existing CSS */
-
-/* Dropdown menu styling */
-.dropdown {
-    position: relative; /* Ensures the dropdown is positioned relative to the parent */
+.container {
+  background-color: #ffffff;
+  margin-top: 50px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
 }
 
-.dropdown-content {
-    display: none; /* Hide the dropdown content by default */
-    position: absolute; /* Position the dropdown below the button */
-    background-color: #3d003d; /* Match the background color of the tab menu */
-    min-width: 150px; /* Set a minimum width for the dropdown */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
-    z-index: 1; /* Ensure the dropdown appears above other content */
+h1 {
+  color: #0055cc;
+  margin-bottom: 20px;
 }
 
-.dropdown-content a {
-    color: white; /* Text color for dropdown items */
-    padding: 10px 15px; /* Add padding to dropdown items */
-    text-decoration: none; /* Remove underline from links */
-    display: block; /* Make each link a block element */
-    border-bottom: 1px solid rgb(228, 223, 223); /* Add a border between items */
-}
-
-.dropdown-content a:hover {
-    background-color: #1b001b; /* Change background color on hover */
-    color: white; /* Ensure text color remains white */
-}
-
-/* Show the dropdown content when hovering over the dropdown button */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-  
-/* Hide all tab content by default */
-.tab-content {
-    display: none;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-  
-/* Show the targeted tab content */
-.tab-content:target {
-    display: block;
-}
-  
-/* Default image styling */
-.default-image {
-    display: block;
-    width: 90%;
-    max-width: 600px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-  
-/* Hide the default image when a tab is selected */
-.tab-content:target ~ .default-image {
-    display: none;
-}
-
-/* By default, the Home content is hidden */
-#home {
-    display: none;
-}
-
-/* When #home is targeted, hide the map image */
-#home:target ~ .default-image {
-    display: none;
-}
-
-/* When #home is targeted, show the Home content */
-#home:target {
-    display: block;
-}
-
-/* Provinces & Territories List Styling */
-.provinces-list {
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-
-.province {
-  display: flex; /* Ensures text and flag align properly */
-  align-items: center; /* Aligns text vertically with the image */
-  gap: 10px; /* Adds spacing between the flag and text */
-  padding-left: 5px; /* Adjusts spacing */
-  font-size: 18px; /* Increase font size for province names */
-  font-weight: bold; /* Optional: Make them bold */
-}
-
-.province::before {
-  content: "";
-  display: inline-block;
-  width: 40px; /* Adjust the width of the flag */
-  height: 30px; /* Adjust the height of the flag */
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 10px; /* Adds spacing between flag and text */
-  flex-shrink: 0; /* Prevents shrinking when resizing */
-}
-
-/* Province-specific flags */
-.bc::before { background-image: url('../Images/bc.png'); }
-.ab::before { background-image: url('../Images/alberta.png'); }
-.mb::before { background-image: url('../Images/manitoba.png'); }
-.nb::before { background-image: url('../Images/new-brunswick.svg'); }
-.nfld::before { background-image: url('../Images/newfoundland-and-labrador.svg'); }
-.ns::before { background-image: url('../Images/nova-scotia.png'); }
-.on::before { background-image: url('../Images/ontario.svg'); }
-.pei::before { background-image: url('../Images/prince-edward-island.png'); }
-.qc::before { background-image: url('../Images/quebec.png'); }
-.sk::before { background-image: url('../Images/saskatchewan.png'); }
-.nt::before { background-image: url('../Images/northwest-territories.svg'); }
-.nu::before { background-image: url('../Images/nunavut.svg'); }
-.yt::before { background-image: url('../Images/yukon.svg'); }
-
-
-/* Show area on hover */
-.province:hover::after {
-  content: attr(data-area);
-  font-size: 16px;
-  color: gray;
-  margin-left: 10px;
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* Province-specific areas */
-.bc:hover::after { content: " - 944,735 km²"; }
-.ab:hover::after { content: " - 661,848 km²"; }
-.mb:hover::after { content: " - 647,797 km²"; }
-.nb:hover::after { content: " - 72,908 km²"; }
-.nfld:hover::after { content: " - 405,212 km²"; }
-.ns:hover::after { content: " - 55,284 km²"; }
-.on:hover::after { content: " - 1,076,395 km²"; }
-.pei:hover::after { content: " - 5,660 km²"; }
-.qc:hover::after { content: " - 1,542,056 km²"; }
-.sk:hover::after { content: " - 651,036 km²"; }
-.nt:hover::after { content: " - 1,346,106 km²"; }
-.nu:hover::after { content: " - 2,093,190 km²"; }
-.yt:hover::after { content: " - 482,443 km²"; }
-  
-.footer {
-  background: #7d4a92;
+button {
+  padding: 12px 20px;
+  background-color: #0077e6;
   color: white;
-  padding: 15px 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Pushes left and right items apart */
-  align-items: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.footer-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Ensures left text is on the left, right text on the right */
+button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
 }
 
-.footer-left {
-  text-align: left;
+button:active {
+  transform: scale(1);
 }
 
-.footer-right {
-  text-align: right;
+p {
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-  
-@media screen and (max-width: 768px) {
-    .main-content {
-      flex-direction: column;
-      align-items: center;
-    }
-    .sidebar-left, .sidebar-right, .content {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-}
-  
-ul {
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    text-align: left; /* Align text to the left */
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
-li {
-    margin-bottom: 5px; /* Optional: Add some space between list items */
+.hidden {
+  display: none;
 }
-  
-  
-  

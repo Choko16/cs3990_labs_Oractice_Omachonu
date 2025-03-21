@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page - CS3990 Assignment 6</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        <div class="buttons">
+            <button id="sayHiBtn">Say Hi</button>
+        </div>
+        <div id="content"></div>
+    </div>
+    <script src="js/greeting.js"></script>
+    <script>
+        // Add event listener to the Say Hi button
+        document.getElementById('sayHiBtn').addEventListener('click', greetUser);
+    </script>
+</body>
+</html>
