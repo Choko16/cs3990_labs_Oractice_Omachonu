@@ -1,0 +1,135 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+/* Headings */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Task Sections */
+.task-section {
+  margin-bottom: 30px;
+}
+
+.task-description {
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #aaa;
+}
+
+/* Button styles */
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 14px;
+  background-color: #e0e0e0;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d5d5d5;
+}
+
+/* Button containers */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-button-section {
+  margin-top: 25px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* News Section (Task 2) */
+#app > p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#content p {
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Generate Button */
+#myBtn {
+  background-color: #ccc;
+  border: 1px solid #999;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background-color: #bbb;
+}
+
+/* Simple responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+.news-image {
+  transition: opacity 0.5s ease;
+}
+
+.stars-container {
+  margin: 5px 0;
+  color: #e74c3c;
+  font-size: 20px;
+}
