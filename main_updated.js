@@ -2,12 +2,9 @@
 class NumberGenerator {
     constructor(containerId, newsSectionId) {
       this.value = 0;
-      //this.generateRandom();
       this.container = document.getElementById(containerId);
       this.newsSection = document.getElementById(newsSectionId);
-      
       this.render();
-      this.generateRandom();
     }
   
     render() {
@@ -45,27 +42,28 @@ class NumberGenerator {
     }
   
     updateNews() {
-      this.newsSection.innerHTML = '';
-      for (let i = 0; i < this.value; i++) {
-        const news = document.createElement('div');
-        news.className = 'news-item';
-  
-        const title = document.createElement('h4');
-        title.textContent = `News Item ${i + 1}`;
-  
-        const content = document.createElement('p');
-        content.textContent = 'some news happened, google it and find out';
-  
-        const removeBtn = document.createElement('button');  // removes the specific div
-        removeBtn.textContent = 'Remove';
-        removeBtn.onclick = () => news.remove();
-  
-        news.appendChild(title);
-        news.appendChild(content);
-        news.appendChild(removeBtn);
-        this.newsSection.appendChild(news);
+        this.newsSection.innerHTML = '';
+        for (let i = 0; i < this.value; i++) {
+          const news = document.createElement('div');
+          news.className = 'news-item';
+      
+          const title = document.createElement('h4');
+          title.textContent = `News Item ${i + 1}`;
+      
+          const content = document.createElement('p');
+          content.textContent = 'some news happened, google it and find out ';
+      
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = 'Remove';
+          removeBtn.onclick = () => news.remove();
+      
+          news.appendChild(title);
+          news.appendChild(content);
+          news.appendChild(removeBtn);
+          this.newsSection.appendChild(news);
+        }
       }
-    }
+      
   }
   
   // === Task 2: Color Palette ===
@@ -95,10 +93,6 @@ class NumberGenerator {
       this.container.addEventListener('mouseover', this);
       this.container.addEventListener('click', this);
     }
-
-    message1(){
-        console.log("hello");
-    }
   
     handleEvent(event) {
       const color = event.target.getAttribute('data-color');
@@ -114,34 +108,27 @@ class NumberGenerator {
     }
   }
   
+  // === Task 3: Sweet Menu ===
   function setupSweetMenu() {
     const menuHeader = document.getElementById('menu-header');
     const sweetMenu = document.getElementById('sweet-menu');
     const sweetPreview = document.getElementById('sweet-preview');
   
     const sweetImages = {
-      wine: 'https://cdn-icons-png.flaticon.com/128/595/595267.png',
-      burger: 'https://cdn-icons-png.flaticon.com/128/1046/1046784.png',
-      hotpot: 'https://cdn-icons-png.flaticon.com/128/1065/1065718.png',
-      fries: 'https://cdn-icons-png.flaticon.com/128/1046/1046786.png',
+      cake: 'https://cdn-icons-png.flaticon.com/128/595/595267.png',
+      cookie: 'https://cdn-icons-png.flaticon.com/128/1046/1046784.png',
+      candy: 'https://cdn-icons-png.flaticon.com/128/1065/1065718.png',
+      donut: 'https://cdn-icons-png.flaticon.com/128/1046/1046786.png',
     };
   
-    // Header click toggles menu and emoji
     menuHeader.addEventListener('click', () => {
-      const isNowHidden = sweetMenu.classList.toggle('hidden');
-  
-      // Toggle  emoji in header
-      menuHeader.textContent = isNowHidden
-        ? 'Sweeties Menu (click to toggle)'
-        : '🍬 Sweeties Menu (click to toggle)';
-  
-      if (isNowHidden) {
+      sweetMenu.classList.toggle('hidden');
+      if (sweetMenu.classList.contains('hidden')) {
         document.querySelectorAll('#sweet-menu li').forEach(li => li.classList.remove('active'));
         sweetPreview.innerHTML = '';
       }
     });
   
-    // Sweet item click shows image + highlights
     sweetMenu.addEventListener('click', (e) => {
       if (e.target.tagName === 'LI') {
         document.querySelectorAll('#sweet-menu li').forEach(li => li.classList.remove('active'));
@@ -154,16 +141,33 @@ class NumberGenerator {
     });
   }
   
-  
-  // === Task 4: Fruit List with Color Buttons & Ratings ===
+  // === Task 4: Fruits ===
   class Fruit {
     constructor(name, color) {
       this.name = name;
       this.color = color;
     }
   
-    show() {
-      return $(`<li data-color="${this.color}" style="background-color: ${this.color}; color: white;">${this.name}</li>`);
+    show(parent) {
+      const item = document.createElement('li');
+      item.className = 'fruit-item';
+      item.setAttribute('data-color', this.color);
+      item.textContent = `${this.name} (${this.color})`;
+      parent.appendChild(item);
+    }
+  }
+  
+  class btnColor {
+    constructor(color) {
+      this.color = color;
+    }
+  
+    show(parent) {
+      const btn = document.createElement('button');
+      btn.style.backgroundColor = this.color;
+      btn.textContent = this.color;
+      btn.setAttribute('data-color', this.color);
+      parent.appendChild(btn);
     }
   }
   
@@ -173,79 +177,62 @@ class NumberGenerator {
       this.rating = rating;
     }
   
-    show() {
-      const li = super.show();
-      const starsContainer = $('<div class="stars"></div>');
+    show(parent) {
+      const item = document.createElement('li');
+      item.className = 'fruit-item';
+      item.setAttribute('data-color', this.color);
+      item.innerHTML = `${this.name} (${this.color})`;
+  
+      const starsContainer = document.createElement('div');
+      starsContainer.className = 'stars';
   
       for (let i = 1; i <= 5; i++) {
-        const starClass = i <= this.rating ? 'star filled' : 'star';
-        const star = $(`<span class="${starClass}" data-index="${i}">★</span>`);
-        starsContainer.append(star);
+        const star = document.createElement('span');
+        star.className = 'star';
+        star.innerHTML = '&#9733;';
+        if (i <= this.rating) star.classList.add('orange');
+        starsContainer.appendChild(star);
       }
   
-      li.append(starsContainer);
-      return li;
+      item.appendChild(starsContainer);
+      parent.appendChild(item);
     }
   }
   
-  class btnColor {
-    constructor(color) {
-      this.color = color;
-    }
-  
-    show() {
-      return $(`<button class="color-btn" data-color="${this.color}" style="background-color: ${this.color}; color: white;">${this.color}</button>`);
-    }
-  }
-  
-  $(document).ready(function () {
+  function setupFruitsAndColors() {
     const fruits = [
-      new RatedFruit("Apple", "red", 0),
-      new RatedFruit("Banana", "yellow", 0),
-      new RatedFruit("Grape", "red", 0),
-      new RatedFruit("Orange", "green", 0),
-      new RatedFruit("Watermelon", "yellow", 1),
-      new RatedFruit("Blueberry", "blue", 2),
-      new RatedFruit("Grape", "violet", 0)
+      new RatedFruit('Strawberry', 'red', 3),
+      new RatedFruit('Blueberry', 'blue', 4),
+      new RatedFruit('Banana', 'yellow', 5),
+      new RatedFruit('Grape', 'purple', 2),
+      new RatedFruit('Lime', 'green', 1)
     ];
   
-    const uniqueColors = [...new Set(fruits.map(fruit => fruit.color))];  // map colors for the button from the colors in rating fruits 
+    const fruitList = document.getElementById('fruit-list');
+    const colorBtns = document.getElementById('color-buttons-fruit');
   
-    const fruitList = $('#fruit-list');
-    fruits.forEach(fruit => {
-      fruitList.append(fruit.show());
-    });
+    const allColors = [...new Set(fruits.map(f => f.color))];
+    allColors.forEach(color => new btnColor(color).show(colorBtns));
+    fruits.forEach(fruit => fruit.show(fruitList));
   
-    const colorButtons = $('#color-buttons-fruit');
-    uniqueColors.forEach(color => {
-      const btn = new btnColor(color);
-      colorButtons.append(btn.show());
-    });
-  
-    $('#color-buttons-fruit').on('click', '.color-btn', function () {  // event delegation
+    $('#color-buttons-fruit').on('click', 'button', function () {
       const selectedColor = $(this).data('color');
-      $('#fruit-list li').css('box-shadow', 'none'); //first removes all the shadows
-      $(`#fruit-list li[data-color="${selectedColor}"]`).css('box-shadow', '0 0 15px 6px rgba(0, 128, 0, 0.6)');
+      $('.fruit-item').removeClass('highlight');
+      $(`.fruit-item[data-color="${selectedColor}"]`).addClass('highlight');
     });
   
     $('#fruit-list').on('click', '.star', function () {
-      const clickedIndex = $(this).data('index');
-      const starsContainer = $(this).parent();
-  
-      starsContainer.find('.star').each(function (index) {
-        if (index < clickedIndex) {
-          $(this).addClass('filled').css('color', 'orange');
-        } else {
-          $(this).removeClass('filled').css('color', 'black');
-        }
-      });
+      const $star = $(this);
+      $star.addClass('orange').prevAll('.star').addClass('orange');
+      $star.nextAll('.star').removeClass('orange');
     });
-  });
+  }
   
   // === Initialize Everything Once ===
   document.addEventListener('DOMContentLoaded', () => {
     new NumberGenerator('number-generator-container', 'news-section');
     new PaletteMenu('color-buttons-container', 'target-block');
     setupSweetMenu();
+    setupFruitsAndColors();
   });
   
