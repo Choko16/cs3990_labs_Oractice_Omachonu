@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 20px;
+  }
+  
+  #app {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  #fruits {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: teal;
+  }
+  
+  #fruits li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border-right: 1px solid #fff;
+    text-transform: capitalize;
+  }
+  
+  #fruits li:last-child {
+    border-right: none;
+  }
+  
+  .fruit-tab.active {
+    background-color: darkcyan;
+    font-weight: bold;
+  }
+
+  #fruits li:hover {
+    background-color: #006666;
+  }
+  
+  
+  #fruitDesc {
+    margin-top: 10px;
+    border: 2px solid teal;
+    background-color: #fff7f2;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  #fruitDesc img {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  #fruitDescText {
+    max-width: 700px;
+  }
+  
+  #fruitDesc h3 {
+    margin: 0;
+    font-size: 1.3em;
+  }
+  
+  #fruitDesc p {
+    margin-top: 8px;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
